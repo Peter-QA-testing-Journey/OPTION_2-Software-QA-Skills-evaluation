@@ -5,19 +5,16 @@ describe('Cypress Docs New Features', () => {
     cy.visit(baseUrl);
   });
 
-
-
   it('should display the site search bar and return relevant results', () => {
+    // Increase the timeout for finding the 'Accept All' button
+    cy.get('button').contains('Accept All', { timeout: 10000 }).should('be.visible').click();
 
-    
-   // Handle the cookies banner
-   cy.get('button').contains('Accept All').click(); 
-    // Check if the search button is visible
-    cy.get('div.searchBox_H2mL button').should('be.visible').click();
-
-   
+    // Check if the search button is visible with increased timeout
+    cy.get('div.searchBox_H2mL button', { timeout: 10000 }).should('be.visible').click();
   });
 });
+
+
 
 /*describe('Cypress Docs New Features', () => {
   const baseUrl = 'https://docs.cypress.io/guides/overview/why-cypress';
