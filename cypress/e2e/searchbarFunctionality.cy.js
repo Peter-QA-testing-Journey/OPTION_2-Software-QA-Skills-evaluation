@@ -8,7 +8,7 @@ describe('Cypress Docs New Features', () => {
   });
 
   it('should display the site search bar and return relevant results', () => {
-    // Handle the cookies bannerr
+    // Handle the cookies bannerrr
     cy.get('button').contains('Accept All').click(); 
 
     // Check if the search button is visible and click it
