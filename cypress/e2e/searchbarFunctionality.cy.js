@@ -3,21 +3,63 @@ describe('Cypress Docs New Features', () => {
 
   beforeEach(() => {
     cy.visit(baseUrl);
+    cy.clearCookies();
+    cy.clearLocalStorage();
   });
-
-
 
   it('should display the site search bar and return relevant results', () => {
+    // Handle the cookies banner
+    cy.get('button').contains('Accept All').click(); 
 
-    
-   // Handle the cookies banner
-   cy.get('button').contains('Accept All').click(); 
-    // Check if the search button is visible
+    // Check if the search button is visible and click it
     cy.get('div.searchBox_H2mL button').should('be.visible').click();
 
-   
-  });
+    // Select the search input element and type a query
+    cy.get('input#docsearch-input') // Adjust the selector if necessary
+      .type('commands');
+
+    // Assert that the search input contains the typed query
+    cy.get('input#docsearch-input')
+      .should('have.value', 'commands');
+
+    // Assert that search results appear
+    cy.get('.DocSearch-Dropdown') // Adjust the selector if necessary
+      .should('be.visible');
+
+    // Assert that specific search results contain the expected text
+    cy.get('.DocSearch-Hit-title') // Adjust the selector if necessary
+      .should('contain.text', 'commands');
+
+       // Clear the search input
+    cy.get('input#docsearch-input').clear();
+
+   // Select the search input element and type an invalid keyword
+   cy.get('input#docsearch-input') // Adjust the selector if necessary
+   .type('nonexistentkeyword12345');
+
+ // Assert that the search input contains the typed query
+ cy.get('input#docsearch-input')
+   .should('have.value', 'nonexistentkeyword12345');
+
+ // Assert that the "No results for" message is displayed
+ cy.get('.DocSearch-NoResults') // Adjust the selector if necessary
+   .should('be.visible')
+   .and('contain.text', 'No results for "nonexistentkeyword12345"');
+
+ // Assert that suggested search terms are displayed
+ cy.get('.DocSearch-NoResults-Prefill-List') // Adjust the selector if necessary
+   .should('be.visible')
+   .and('contain.text', 'API')
+   .and('contain.text', 'Guides')
+   .and('contain.text', 'FAQ');
 });
+
+
+  });
+
+
+
+
 
 
 /*describe('Cypress Docs New Features', () => {
