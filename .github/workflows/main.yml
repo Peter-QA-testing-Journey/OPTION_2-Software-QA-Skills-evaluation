@@ -1,5 +1,7 @@
 name: Cypress Tests
 
+# This section specifies the events that will trigger the workflow.
+# It will run when there's a push or a pull request to the 'main' branch.
 on:
   push:
     branches:
@@ -8,52 +10,47 @@ on:
     branches:
       - main
 
+# This section defines the jobs that will run as part of this workflow.
 jobs:
-  test:
+  # We name the job 'test_cypress'.
+  test_cypress:
+    # 'runs-on' specifies the type of machine the job will run on.
+    # 'ubuntu-latest' means it will use the latest version of Ubuntu as the operating system.
     runs-on: ubuntu-latest
 
+    # 'container' specifies the Docker container to use for this job.
+    # Here, we use a Cypress container that has browsers pre-installed.
+    container:
+      image: cypress/browsers:latest
+
+    # 'steps' defines the sequence of tasks to be performed in this job.
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+      # Step 1: Check out the code from the repository
+      # This action pulls down your code so that the workflow can work with it.
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '16'
+      # Step 2: Set up Node.js environment
+      # This action sets up a Node.js environment, which is needed to run JavaScript tools like npm and Cypress.
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16' # Specifies to use Node.js version 16
 
-    - name: Install dependencies
-      run: npm install
+      # Step 3: Install project dependencies
+      # This command installs the dependencies listed in your package-lock.json file.
+      # It ensures that all the required packages are available for your project to run.
+      - name: Install dependencies
+        run: npm ci
 
-    - name: Install Cypress
-      run: npm install cypress
+      # Step 4: Install Cypress
+      # This command installs Cypress, which is a testing framework.
+      # It downloads all the necessary files for Cypress to run.
+      - name: Install Cypress
+        run: npx cypress install
 
-    - name: Print environment info
-      run: |
-        node -v
-        npm -v
-        google-chrome --version
-
-    - name: Run Cypress tests
-      run: npm run test
-      continue-on-error: true
-
-    - name: Archive Cypress screenshots
-      if: always()
-      uses: actions/upload-artifact@v2
-      with:
-        name: cypress-screenshots
-        path: cypress/screenshots
-
-    - name: Archive Cypress videos
-      if: always()
-      uses: actions/upload-artifact@v2
-      with:
-        name: cypress-videos
-        path: cypress/videos
-
-    - name: Archive Cypress logs
-      if: always()
-      uses: actions/upload-artifact@v2
-      with:
-        name: cypress-logs
-        path: cypress/logs
+      # Step 5: Run Cypress tests
+      # This command runs the Cypress tests using the Chrome browser.
+      # It executes the tests defined in your Cypress configuration.
+      - name: Run Cypress tests
+        run: npx cypress run -b chrome
