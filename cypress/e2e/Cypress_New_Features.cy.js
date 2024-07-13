@@ -17,7 +17,7 @@ describe('Cypress Docs New Features', () => {
     // Handle the cookies banner with a more robust selector
     cy.get('button').contains('Accept All', { timeout: 10000 }).should('be.visible').click();
 
-    // Check if the search button is visible with increased timeout
+    // Check if the search bbutton is visible with increased timeout
     cy.get('div.searchBox_H2mL button', { timeout: 10000 }).should('be.visible').click();
   });
 });
