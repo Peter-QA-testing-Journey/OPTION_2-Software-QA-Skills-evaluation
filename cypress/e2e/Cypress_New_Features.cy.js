@@ -3,13 +3,21 @@ describe('Cypress Docs New Features', () => {
 
   beforeEach(() => {
     cy.visit(baseUrl);
+
+    // Wait for the page to load fully
+    cy.wait(5000); // Wait for 5 seconds
   });
 
   it('should display the site search bar and return relevant results', () => {
-    // Increase the timeout for finding the 'Accept All' button
+    // Log the entire document body to debug the DOM
+    cy.document().then(doc => {
+      cy.log(doc.body.innerHTML);
+    });
+
+    // Handle the cookies banner with a more robust selector
     cy.get('button').contains('Accept All', { timeout: 10000 }).should('be.visible').click();
 
-    // Check if the search button is visible with increased timeoutt
+    // Check if the search button is visible with increased timeout
     cy.get('div.searchBox_H2mL button', { timeout: 10000 }).should('be.visible').click();
   });
 });
