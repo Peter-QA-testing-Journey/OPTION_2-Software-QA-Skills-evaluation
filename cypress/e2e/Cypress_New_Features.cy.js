@@ -9,7 +9,7 @@ describe('Cypress Docs New Features', () => {
     // Increase the timeout for finding the 'Accept All' button
     cy.get('button').contains('Accept All', { timeout: 10000 }).should('be.visible').click();
 
-    // Check if the search button is visible with increased timeout
+    // Check if the search button is visible with increased timeoutt
     cy.get('div.searchBox_H2mL button', { timeout: 10000 }).should('be.visible').click();
   });
 });
