@@ -25,19 +25,20 @@ The scope of this test plan includes:
 
 #### Side Menu
 - Verify the side menu is visible on the homepage.
-- Ensure the "Dashboard" category expands to show subcategories.
-- Confirm navigation to each subcategory displays the correct content.
-- Validate the URL changes appropriately for each subcategory.
+- Ensure the "Dashboard" - existence of categories that expand to show subcategories.
+- Confirm navigation to subcategory displays the correct content.
 
 #### Spanish Language Support
 - Verify the language meta tag is set to 'en' (English) initially.
 - Check for the presence of a language switcher.
 - Simulate changing the browser language to Spanish and reload the page.
-- Ensure the site content is displayed in Spanish when the language is switched.
+- Verify the site content is displayed in Spanish when the language is switched in browser.
 
 #### REST API Tests 
 - Validate GET, POST, PUT, and DELETE methods for the posts endpoint at `https://jsonplaceholder.typicode.com/posts`.
+- Assertions presented as well.
 
+  
 ## Environment Preparation
 
 ### Environment Setup
@@ -67,16 +68,13 @@ I have invested significant effort in resolving these issues and will continue t
  
    git clone https://github.com/your-repo/cypress-e2e-tests.git
    cd cypress-e2e-tests
-  
-2. **Install dependencies**:
-  
-   npm ci
+   
 
-3. **Open Cypress**:
+2. **Open Cypress**:
 
    npx cypress open
 
-5. **Run the tests**:
+3. **Run the tests**:
    - In the Cypress Test Runner that opens, click on the test file you want to run.
    - Or headlessly with CMD -npm run test (from directory Project)
 
