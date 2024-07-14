@@ -73,10 +73,8 @@ I have invested significant effort in resolving these issues and will continue t
 ## Running Locally
 1. **Clone the repository**:
  
-   git clone https://github.com/your-repo/cypress-e2e-tests.git
-   cd cypress-e2e-tests
+   git clone [Cloning Repository](https://github.com/Peter-QA-testing-Journey/OPTION_2-Software-QA-Skills-evaluation.git)
    
-
 2. **Open Cypress**:
 
    npx cypress open
