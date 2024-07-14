@@ -47,23 +47,6 @@ The scope of this test plan includes:
    - **Visual Studio Code:** As the code editor.
    - **Node.js and npm:** To manage Cypress and other dependencies.
 
-2. **Installation Steps:**
-   - Install Node.js and npm from [nodejs.org](https://nodejs.org/).
-   - Initialize a new project directory:
-     ```bash
-     mkdir cypress-e2e-tests
-     cd cypress-e2e-tests
-     npm init -y
-     ```
-   - Install Cypress:
-     ```bash
-     npm install cypress --save-dev
-     ```
-   - Open Cypress:
-     ```bash
-     npx cypress open
-     ```
-
 ## Writing Tests
 
 ### Example Cypress Tests
@@ -78,7 +61,6 @@ The scope of this test plan includes:
 While the tests run perfectly locally, as confirmed by executing `npx cypress open` and running the tests successfully, there are challenges in running these tests on the CI pipeline. Despite thorough investigations and multiple adjustments, the tests have issues in the CI environment, possibly due to differences in how the environment handles UI rendering and timing. 
 I have invested significant effort in resolving these issues and will continue to work on ensuring the tests run smoothly in the CI pipeline.
 [![Cypress Tests](https://github.com/Peter-QA-testing-Journey/PANTHEON/actions/workflows/main.yml/badge.svg)](https://github.com/Peter-QA-testing-Journey/PANTHEON/actions/workflows/main.yml)
-
 
 ## Running Locally
 1. **Clone the repository**:
@@ -97,6 +79,7 @@ I have invested significant effort in resolving these issues and will continue t
 5. **Run the tests**:
    - In the Cypress Test Runner that opens, click on the test file you want to run.
    - Or headlessly with CMD -npm run test (from directory Project)
+
 
 
 
