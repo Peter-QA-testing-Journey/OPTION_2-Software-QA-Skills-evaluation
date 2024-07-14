@@ -7,8 +7,8 @@ describe('Cypress Docs New Features', () => {
     cy.clearLocalStorage();
   });
 
-  it('should display the site search bar and return relevant results', () => {
-    // Handle the cookies bannerrrr
+  it('verifies the site search bar functionality for valid and invalid queries', () => {
+    // Handle the cookies banner
     cy.get('button', { timeout: 4000 }).contains('Accept All').click(); 
 
     // Check if the search button is visible and click it

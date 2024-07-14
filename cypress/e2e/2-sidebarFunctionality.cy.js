@@ -7,7 +7,7 @@ describe('Cypress Docs Sidebar Functionality', () => {
       cy.clearLocalStorage();
     });
   
-    it('should display the sidebar and expand subcategories', () => {
+    it('display the sidebar and expand subcategories', () => {
       // Handle the cookies banner
       cy.get('button').contains('Accept All').click({ force: true });
   
@@ -20,6 +20,11 @@ describe('Cypress Docs Sidebar Functionality', () => {
         // Assert that the subcategories are visible
         cy.get('.sidebar_njMd').contains('Why Cypress?').should('be.visible').click();
 
+          // Navigate to subcategory "Why cypress" and verify the page content
+          cy.get('.sidebar_njMd').contains('Why Cypress?').click();
+          cy.url().should('include', '/guides/overview/why-cypress');
+          cy.get('h1').should('contain.text', 'Why Cypress?');
+
     // Click on the "Getting Started" category to expand subcategories
     cy.get('.sidebar_njMd').contains('Getting Started').click();
 
@@ -27,7 +32,7 @@ describe('Cypress Docs Sidebar Functionality', () => {
     cy.get('.sidebar_njMd').contains('Installing Cypress').should('be.visible').click();
 
 
-      // Optionally, navigate to a subcategory and verify the page content
+      // Navigate to a subcategory Installing Cypress and verify the page content
     cy.url().should('include', '/guides/getting-started/installing-cypress');
     cy.get('h1').should('contain.text', 'Installing Cypress');
 
@@ -36,17 +41,7 @@ describe('Cypress Docs Sidebar Functionality', () => {
  
  
     
-        // Optionally, navigate to a subcategory and verify the page content
-        cy.get('.sidebar_njMd').contains('Why Cypress?').click();
-        cy.url().should('include', '/guides/overview/why-cypress');
-        cy.get('h1').should('contain.text', 'Why Cypress?');
-     
-  
-
-    
-        
-    
-        // Navigate to "Opening the App" subcategory
+      // Navigate to a subcategory "Opening the App" and verify the page content
         cy.get('.sidebar_njMd').contains('Opening the App').click();
         cy.url().should('include', '/guides/getting-started/opening-the-app');
         cy.get('h1').should('contain.text', 'Opening the App');

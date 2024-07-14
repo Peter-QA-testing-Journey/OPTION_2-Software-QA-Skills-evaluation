@@ -32,7 +32,7 @@ describe('API Testing for Slovak Movies', () => {
     
   
     // Test to verify PUT method for updating an existing post
-    it('should verify PUT method for updating a post with new details about a Slovak movie', () => {
+    it('Verify PUT method for updating a post with new details about a Slovak movie', () => {
       // Details of the updated post
       const updatedMovie = {
         id: 1,
@@ -53,7 +53,7 @@ describe('API Testing for Slovak Movies', () => {
     });
   
     // Test to verify DELETE method for deleting a post
-    it('should verify DELETE method for deleting a post', () => {
+    it('Verify DELETE method for deleting a post', () => {
       // Details of the post to create and delete
       const movieToDelete = {
         title: 'Temporary Movie',

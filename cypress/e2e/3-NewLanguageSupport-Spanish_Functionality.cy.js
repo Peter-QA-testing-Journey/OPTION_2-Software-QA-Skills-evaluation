@@ -1,4 +1,4 @@
-describe('Language Meta Tag Verification', () => {
+describe('Verify Spanish Language Support', () => {
     const baseUrl = 'https://docs.cypress.io/guides/overview/why-cypress';
   
     // Open the webpage and clear cookies and local storage before each test
@@ -8,7 +8,7 @@ describe('Language Meta Tag Verification', () => {
       cy.clearLocalStorage();
     });
 
-       // Handle uncaught exceptions
+       // Handle uncaught exceptions that can cause a fall down of tests
        Cypress.on('uncaught:exception', (_err, _runnable) => {
         return false;
       });
@@ -35,11 +35,10 @@ describe('Language Meta Tag Verification', () => {
     });
   
   
-  // Sources and Reasoning:
+  // Again Self-learning = Sources and Reasoning:
   // Investigated the page using browser developer tools (F12) to check the HTML structure.
   // Searched for elements related to language settings and found a meta tag specifying the language as 'en' (English).
   // Meta tags are used to indicate language and other metadata, as noted in web standards and best practices.
-  // Consulted Cypress documentation and online resources, including articles on testing internationalization (i18n),
   // suggesting checking for language meta tags and language switcher elements to confirm language support.
   
   // Findings:
@@ -49,8 +48,10 @@ describe('Language Meta Tag Verification', () => {
   
  
     
-      it('should attempt to switch the browser language and reload the page', () => {
-        // Simulate changing the browser language to Spanish and reloading the page
+      it('Switching the browser language and reload the page', () => {
+        // Simulate changing the browser language to Spanish and reloading the page -- Self-LEARNING -- new for me
+        //https://docs.cypress.io/api/commands/visit#Yields
+        
         cy.visit(baseUrl, {
           onBeforeLoad(win) {
             Object.defineProperty(win.navigator, 'language', { value: 'es-ES' });
