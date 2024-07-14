@@ -5,7 +5,7 @@
 ### Objectives
 - Ensure the new site search bar is functional and returns relevant results.
 - Verify the functionality of the side menu and its subcategories.
-- Confirm the site supports the Spanish language and renders content appropriately.
+- Verify the site supports the Spanish language and its content appropriately.
 - (Optional) Validate REST API endpoints for CRUD operations.
 
 ### Scope
@@ -18,25 +18,28 @@ The scope of this test plan includes:
 ### Test Cases
 
 #### Site Search Bar
-- Verify the search bar is visible on the homepage.
+- Verify the search bar is visible on the homepage and can be activated.
 - Ensure the search bar returns relevant results for valid queries.
-- Validate the search results contain expected keywords.
-- Ensure the search bar handles unexpected or invalid keywords.
+- Validate the search results contain the expected keywords.
+- Ensure the search bar handles unexpected or invalid keywords:
+- Verify that the "No results for" message is displayed.
+- Check that suggested search terms are displayed.
 
 #### Side Menu
-- Verify the side menu is visible on the homepage.
-- Ensure the "Dashboard" - existence of categories that expand to show subcategories.
-- Confirm navigation to subcategory displays the correct content.
+- Verify the sidebar menu is visible on the homepage.
+- Ensure the sidebar menu contains the "Overview" and "Getting Started" categories.
+- Verify "Overview" and "Getting Started" navigation to its subcategories and displays its correct content and URL.
 
 #### Spanish Language Support
-- Verify the language meta tag is set to 'en' (English) initially.
-- Check for the presence of a language switcher.
-- Simulate changing the browser language to Spanish and reload the page.
-- Verify the site content is displayed in Spanish when the language is switched in browser.
+- Verify the language meta tag is set to 'en' (English).
+- Check for the presence of the language switcher.
+- Changing the browser language to Spanish and reload the page.
+- Verify for the presence of the spanish phrase.
 
-#### REST API Tests 
+#### REST API Tests (for fictional List of Slovak Movies)
 - Validate GET, POST, PUT, and DELETE methods for the posts endpoint at `https://jsonplaceholder.typicode.com/posts`.
 - Assertions presented as well.
+- Using Fixture file, Callbacks, "then" 
 
   
 ## Environment Preparation
@@ -47,6 +50,7 @@ The scope of this test plan includes:
    - **Cypress:** For writing and executing E2E tests.
    - **Visual Studio Code:** As the code editor.
    - **Node.js and npm:** To manage Cypress and other dependencies.
+   - Cypress documentation -https://docs.cypress.io/api/commands/visit#Yields
 
 ## Writing Tests (links to cy.js and json files)
 
