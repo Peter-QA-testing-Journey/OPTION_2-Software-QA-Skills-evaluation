@@ -65,6 +65,7 @@ The scope of this test plan includes:
 
 While the tests run perfectly locally, as confirmed by executing `npx cypress open` and running the tests successfully, there are challenges in running these tests on the CI pipeline. Despite thorough investigations and multiple adjustments, the tests have issues in the CI environment, possibly due to differences in how the environment handles UI rendering and timing. 
 I have invested significant effort in resolving these issues and will continue to work on ensuring the tests run smoothly in the CI pipeline.
+
 [![Cypress Tests](https://github.com/Peter-QA-testing-Journey/PANTHEON/actions/workflows/main.yml/badge.svg)](https://github.com/Peter-QA-testing-Journey/PANTHEON/actions/workflows/main.yml)
 
 #### [YML - FILE-FOR PIPELINE](https://github.com/Peter-QA-testing-Journey/PANTHEON/blob/main/.github/workflows/main.yml)
