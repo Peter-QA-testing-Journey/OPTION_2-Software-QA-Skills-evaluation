@@ -11,16 +11,10 @@ describe('Cypress Docs Sidebar Functionality', () => {
       // Handle the cookies banner
       cy.get('button').contains('Accept All').click({ force: true });
   
-      // Check if the sidebar is visible
+      // Verify the "Dashboard" (side menu) is present in the side menu
     cy.get('.sidebar_njMd').should('be.visible');
   
-      
-      
-    
-        
-    
-    
-        // Click on the "Overview" category to expand subcategories
+      // Click on the "Overview" category to expand subcategories
         cy.get('.sidebar_njMd').contains('Overview').click();
     
         // Assert that the subcategories are visible
@@ -30,15 +24,33 @@ describe('Cypress Docs Sidebar Functionality', () => {
     cy.get('.sidebar_njMd').contains('Getting Started').click();
 
     // Assert that the subcategories are visible
-    cy.get('.sidebar_njMd').contains('Installing Cypress').should('be.visible');
+    cy.get('.sidebar_njMd').contains('Installing Cypress').should('be.visible').click();
+
+
+      // Optionally, navigate to a subcategory and verify the page content
+    cy.url().should('include', '/guides/getting-started/installing-cypress');
+    cy.get('h1').should('contain.text', 'Installing Cypress');
+
+
     cy.get('.sidebar_njMd').contains('Opening the App').should('be.visible');
-    
+ 
  
     
         // Optionally, navigate to a subcategory and verify the page content
         cy.get('.sidebar_njMd').contains('Why Cypress?').click();
         cy.url().should('include', '/guides/overview/why-cypress');
         cy.get('h1').should('contain.text', 'Why Cypress?');
-      });
-    });
+     
   
+
+    
+        
+    
+        // Navigate to "Opening the App" subcategory
+        cy.get('.sidebar_njMd').contains('Opening the App').click();
+        cy.url().should('include', '/guides/getting-started/opening-the-app');
+        cy.get('h1').should('contain.text', 'Opening the App');
+      });
+    
+  
+    });
