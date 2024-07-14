@@ -54,7 +54,7 @@ The scope of this test plan includes:
 
 #### [searchbarFunctionality.cy.js](https://github.com/Peter-QA-testing-Journey/PANTHEON/blob/main/cypress/e2e/1-searchbarFunctionality.cy.js)
 #### [sidebarFunctionality.cy.js](https://github.com/Peter-QA-testing-Journey/PANTHEON/blob/main/cypress/e2e/2-sidebarFunctionality.cy.js)
-#### [newLanguageSupport.cy.js](https://github.com/Peter-QA-testing-Journey/PANTHEON/blob/main/cypress/e2e/2-sidebarFunctionality.cy.js)
+#### [newLanguageSupport.cy.js](https://github.com/Peter-QA-testing-Journey/PANTHEON/blob/main/cypress/e2e/3-NewLanguageSupport-Spanish_Functionality.cy.js)
 #### [REST_API_Tests.cy.js](https://github.com/Peter-QA-testing-Journey/PANTHEON/blob/main/cypress/e2e/4-%20REST_API_Tests.cy.js)
 
 ### Summary of Efforts
