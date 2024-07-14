@@ -8,6 +8,7 @@ module.exports = defineConfig({
     baseUrl: 'https://docs.cypress.io',
     screenshotOnRunFailure: false,
     video: false,
+    trashAssetsBeforeRuns: false,
     supportFile: 'cypress/support/e2e.js',
   },
 });
