@@ -1,24 +1,4 @@
 ﻿# Cypress E2E Tests
-[![Cypress Tests](https://github.com/Peter-QA-testing-Journey/PANTHEON/actions/workflows/main.yml/badge.svg)](https://github.com/Peter-QA-testing-Journey/PANTHEON/actions/workflows/main.yml)
-## CI Pipeline
-You can view the pipeline configuration [here](https://github.com/your-repo/cypress-e2e-tests/actions). The tests run perfectly locally but encounter rendering or timing issues in the CI pipeline. Despite thorough investigations and multiple adjustments, these issues persist as part of my self-learning process in setting up and running CI pipelines with GitHub Actions.
-
-## Running Locally
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/your-repo/cypress-e2e-tests.git
-   cd cypress-e2e-tests
-   ```
-2. **Install dependencies**:
-   ```bash
-   npm ci
-   ```
-3. **Open Cypress**:
-   ```bash
-   npx cypress open
-   ```
-4. **Run the tests**:
-   - In the Cypress Test Runner that opens, click on the test file you want to run.
 
 ## Test Plan
 
@@ -97,6 +77,26 @@ The scope of this test plan includes:
 
 While the tests run perfectly locally, as confirmed by executing `npx cypress open` and running the tests successfully, there are challenges in running these tests on the CI pipeline. Despite thorough investigations and multiple adjustments, the tests have issues in the CI environment, possibly due to differences in how the environment handles UI rendering and timing. 
 I have invested significant effort in resolving these issues and will continue to work on ensuring the tests run smoothly in the CI pipeline.
+[![Cypress Tests](https://github.com/Peter-QA-testing-Journey/PANTHEON/actions/workflows/main.yml/badge.svg)](https://github.com/Peter-QA-testing-Journey/PANTHEON/actions/workflows/main.yml)
+
+
+## Running Locally
+1. **Clone the repository**:
+ 
+   git clone https://github.com/your-repo/cypress-e2e-tests.git
+   cd cypress-e2e-tests
+  
+2. **Install dependencies**:
+  
+   npm ci
+
+3. **Open Cypress**:
+
+   npx cypress open
+
+5. **Run the tests**:
+   - In the Cypress Test Runner that opens, click on the test file you want to run.
+   - Or headlessly with CMD -npm run test (from directory Project)
 
 
 
