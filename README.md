@@ -3,10 +3,10 @@
 ## Test Plan
 
 ### Objectives
-- Ensure the new site search bar is functional and returns relevant results.
-- Verify the functionality of the side menu and its subcategories.
-- Verify the site supports the Spanish language and its content appropriately.
-- (Optional) Validate REST API endpoints for CRUD operations.
+- SEARCH BAR: Verify visibility and functionality, ensuring relevant results for valid queries, handling invalid queries, and displaying expected keywords.
+- SIDE MENU: Confirm visibility and proper navigation of "Overview" and "Getting Started" categories and subcategories, ensuring correct content and URLs.
+- NEW LANGUAGE SUPPORT: Verify language switcher presence, meta tag set to 'en', and appropriate content display when switching to Spanish, checking for Spanish phrases.
+- REST API WITH ASSERTIONS: Validate GET, POST, PUT, and DELETE methods for the posts endpoint at https://jsonplaceholder.typicode.com/posts using assertions, fixture files, and callbacks.
 
 ### Scope
 The scope of this test plan includes:
