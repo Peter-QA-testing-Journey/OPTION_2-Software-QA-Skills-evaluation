@@ -48,7 +48,7 @@ The scope of this test plan includes:
    - **Visual Studio Code:** As the code editor.
    - **Node.js and npm:** To manage Cypress and other dependencies.
 
-## Writing Tests (links to cy.js files)
+## Writing Tests (links to cy.js and json files)
 
 
 #### [searchbarFunctionality.cy.js](https://github.com/Peter-QA-testing-Journey/PANTHEON/blob/main/cypress/e2e/1-searchbarFunctionality.cy.js)
