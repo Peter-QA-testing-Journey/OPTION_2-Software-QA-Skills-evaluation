@@ -48,7 +48,7 @@ jobs:
       # It downloads all the necessary files for Cypress to run.
       - name: Install Cypress
         run: npx cypress install
-
+      
       # Step 5: Run Cypress tests
       # This command runs the Cypress tests using the Chrome browser.
       # It executes the tests defined in your Cypress configuration.
