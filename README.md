@@ -1,4 +1,4 @@
-﻿# Cypress E2E Tests
+﻿# OPTION_2-Software QA – Skills evaluation
 
 ## Test Plan
 
