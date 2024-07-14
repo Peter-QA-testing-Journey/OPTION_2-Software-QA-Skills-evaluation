@@ -9,7 +9,7 @@ describe('Cypress Docs New Features', () => {
 
   it('should display the site search bar and return relevant results', () => {
     // Handle the cookies bannerrrr
-    cy.get('button').contains('Accept All').click(); 
+    cy.get('button', { timeout: 4000 }).contains('Accept All').click(); 
 
     // Check if the search button is visible and click it
     cy.get('div.searchBox_H2mL button').should('be.visible').click();
