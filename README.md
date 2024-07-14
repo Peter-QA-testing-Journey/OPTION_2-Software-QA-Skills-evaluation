@@ -35,7 +35,7 @@ The scope of this test plan includes:
 - Simulate changing the browser language to Spanish and reload the page.
 - Ensure the site content is displayed in Spanish when the language is switched.
 
-#### REST API Tests (Optional)
+#### REST API Tests 
 - Validate GET, POST, PUT, and DELETE methods for the posts endpoint at `https://jsonplaceholder.typicode.com/posts`.
 
 ## Environment Preparation
