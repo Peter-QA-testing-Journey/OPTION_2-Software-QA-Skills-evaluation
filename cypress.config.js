@@ -6,7 +6,7 @@ module.exports = defineConfig({
       // implement node event listeners here
     },
     baseUrl: 'https://docs.cypress.io',
-    screenshotOnRunFailure: false,
+    screenshotOnRunFailure: true, // Enable screenshots on failure
     video: false,
     trashAssetsBeforeRuns: false,
     supportFile: 'cypress/support/e2e.js',
