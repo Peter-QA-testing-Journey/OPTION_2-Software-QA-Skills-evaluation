@@ -10,10 +10,10 @@
 
 ### Scope
 The scope of this test plan includes:
-- Functional testing of the site search bar.
-- Functional testing of the side menu and subcategories.
-- Verification of Spanish language support.
-- REST API testing (optional).
+- Functional Testing: Verify the site search bar functionality.
+- Functional Testing: Verify the side menu and subcategory navigation.
+- Functional Testing: Verify Spanish language support.
+- API Testing (Optional): Validate CRUD operations for the posts endpoint.
 
 ### Test Cases
 
