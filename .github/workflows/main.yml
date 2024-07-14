@@ -48,15 +48,7 @@ jobs:
       # It downloads all the necessary files for Cypress to run.
       - name: Install Cypress
         run: npx cypress install
-
-        
-        - name: Create screenshots and videos directories
-          run: |
-          mkdir -p cypress/screenshots
-          mkdir -p cypress/videos
-          chmod -R 777 cypress/screenshots
-          chmod -R 777 cypress/videos
-
+      
       # Step 5: Run Cypress tests
       # This command runs the Cypress tests using the Chrome browser.
       # It executes the tests defined in your Cypress configuration.
