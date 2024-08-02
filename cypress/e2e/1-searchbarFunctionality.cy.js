@@ -10,6 +10,9 @@ describe('Cypress Docs New Features', () => {
   it('verifies the site search bar functionality for valid and invalid queries', () => {
     // Handle the cookies banner
     cy.get('button', { timeout: 4000 }).contains('Accept All').click(); 
+    // another option>
+//cy.get('.osano-cm-accept-all').click();
+
 
     // Check if the search button is visible and click it
     cy.get('div.searchBox_H2mL button').should('be.visible').click();
